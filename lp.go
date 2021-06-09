@@ -462,3 +462,11 @@ func (l *LP) Variables() []float64 {
 	}
 	return row
 }
+
+func (l *LP) SetTimeout(timeoutSeconds int32) {
+	C.set_timeout(l.ptr, C.Long(timeoutSeconds))
+}
+
+func (l *LP) GetTimeout() int32 {
+	return int32(C.get_timeout(l.ptr))
+}
