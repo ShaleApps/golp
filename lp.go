@@ -464,7 +464,7 @@ func (l *LP) Variables() []float64 {
 }
 
 func (l *LP) SetTimeout(timeoutSeconds int32) {
-	C.set_timeout(l.ptr, C.Long(timeoutSeconds))
+	C.set_timeout(l.ptr, C.long(timeoutSeconds))
 }
 
 func (l *LP) GetTimeout() int32 {
